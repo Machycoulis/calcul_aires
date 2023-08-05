@@ -93,7 +93,6 @@ else:
 #_____demander rendement de la peinture
 typingPrint("Maintenant, quel est le rendement de ta peinture? (m2/L)\n")
 
-
 while True:
     try:
         rdm = float(input())
