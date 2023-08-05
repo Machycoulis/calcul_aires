@@ -6,20 +6,43 @@ FORMES_CHOIX = ("c", "r", "t", "cc")
 
 #______def des fonctions par forme
 def carre_aire():
-        car_aire = int(car_l**2)
-        print(f"Aire du carré: {car_aire} cm2")
+    aire = float((car_l**2)*0.0001)
+    print(f"Aire du carré: {aire} m2")
+    return aire
 
-def rect_aire():
-    rect_aire = int(rect_l*rect_h)
-    print(f"Aire du rectangle: {rect_aire} cm2")
+def rectangle_aire():
+    aire = float((rect_l*rect_h)*0.0001)
+    print(f"Aire du rectangle: {aire} m2")
+    return aire
 
-def tri_aire():
-    tri_aire = int((tri_h*tri_l)/2)
-    print(f"Aire du triangle: {tri_aire} cm2")
+def triangle_aire():
+    aire = float(((tri_h*tri_l)/2)*0.0001)
+    print(f"Aire du triangle: {aire} m2")
+    return aire
 
-def cc_aire():
-    cc_aire = int(pi * cc_r**2)
-    print(f"Aire du cercle: {cc_aire} cm2")
+def cercle_aire():
+    aire = float((pi * cc_r**2)*0.0001)
+    print(f"Aire du cercle: {aire} m2")
+    return aire
+
+def rendement():
+    if forme == "c":
+        vol_peint = float(carre_aire()/rdm)
+        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+
+    if forme == "r":
+        vol_peint = float(rectangle_aire()/rdm)
+        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+
+    if forme == "t":
+        vol_peint = float(triangle_aire()/rdm)
+        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+
+    if forme == "cc":
+        vol_peint = float(cercle_aire()/rdm)
+        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+
+
 
 #______fonction cool trouvée sur un site en faisant des recherches sur time.sleep
 
@@ -27,19 +50,19 @@ def typingPrint(text):
   for character in text:
     sys.stdout.write(character)
     sys.stdout.flush()
-    time.sleep(0.05)
+    time.sleep(0)
 
 #_______ici je demande de quelle forme calculer l'aire
 
-typingPrint("Bonjour, nous sommes ici pour calculer l'aire de tes murs.\n")
-time.sleep(1)
+typingPrint("Bonjour, nous sommes ici pour calculer l'aire de ton support et t'indiquer quelle quantité de peinture sera nécessaire.\n")
+time.sleep(0)
 
-typingPrint("Quelle est la forme de ton mur?\n")
-time.sleep(1)
+typingPrint("Quelle est la forme de ton support?\n")
+time.sleep(0)
 
 for i in FORMES[0:4]:
     print(i)
-    time.sleep(1)
+    time.sleep(0)
 
 forme = input("Forme: ").lower()
 
@@ -56,12 +79,27 @@ else:
    if forme == "r":
        rect_l = float(input("Longueur (cm) ="))
        rect_h = float(input("Hauteur (cm) ="))
-       rect_aire()
+       rectangle_aire()
+
    if forme == "t":
        tri_l = float(input("Longueur (cm) ="))
        tri_h = float(input("Hauteur (cm) ="))
-       tri_aire()
+       triangle_aire()
+
    if forme == "cc":
        cc_r = float(input("Rayon (cm) ="))
-       cc_aire()
+       cercle_aire()
 
+#_____demander rendement de la peinture
+typingPrint("Maintenant, quel est le rendement de ta peinture? (m2/L)\n")
+
+
+while True:
+    try:
+        rdm = float(input())
+    except ValueError:
+        print("Entrée invalide. Veuillez indiquer un chiffre.")
+    else:
+        break
+
+rendement()
