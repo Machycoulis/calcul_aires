@@ -2,7 +2,7 @@ from math import pi
 import time, sys
 
 FORMES = ("c - carré", "r - rectangle", "t - triangle", "cc - cercle")
-FORMES_CHOIX = ("c", "re", "t", "cc")
+FORMES_CHOIX = ("c", "r", "t", "cc")
 
 #______def des fonctions par forme
 def carre_aire():
