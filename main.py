@@ -28,19 +28,19 @@ def cercle_aire():
 def rendement():
     if forme == "c":
         vol_peint = float(carre_aire()/rdm)
-        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+        print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
     if forme == "r":
         vol_peint = float(rectangle_aire()/rdm)
-        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+        print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
     if forme == "t":
         vol_peint = float(triangle_aire()/rdm)
-        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+        print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
     if forme == "cc":
         vol_peint = float(cercle_aire()/rdm)
-        print(f"Il vous faudra {vol_peint} litres de peinture pour XX m2")
+        print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
 
 
@@ -74,21 +74,21 @@ while forme not in FORMES_CHOIX:
 else:
    if forme == "c":
       car_l = float(input("Longueur (cm) ="))
-      carre_aire()
+      aire = carre_aire()
 
    if forme == "r":
        rect_l = float(input("Longueur (cm) ="))
        rect_h = float(input("Hauteur (cm) ="))
-       rectangle_aire()
+       aire = rectangle_aire()
 
    if forme == "t":
        tri_l = float(input("Longueur (cm) ="))
        tri_h = float(input("Hauteur (cm) ="))
-       triangle_aire()
+       aire = triangle_aire()
 
    if forme == "cc":
        cc_r = float(input("Rayon (cm) ="))
-       cercle_aire()
+       aire = cercle_aire()
 
 #_____demander rendement de la peinture
 typingPrint("Maintenant, quel est le rendement de ta peinture? (m2/L)\n")
