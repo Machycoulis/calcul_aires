@@ -6,40 +6,40 @@ FORMES_CHOIX = ("c", "r", "t", "cc")
 
 #______def des fonctions par forme
 def carre_aire():
-    aire = float((car_l**2)*0.0001)
+    aire = round(float((car_l**2)*0.0001), 2)
     print(f"Aire du carré: {aire} m2")
     return aire
 
 def rectangle_aire():
-    aire = float((rect_l*rect_h)*0.0001)
+    aire = round(float((rect_l*rect_h)*0.0001), 2)
     print(f"Aire du rectangle: {aire} m2")
     return aire
 
 def triangle_aire():
-    aire = float(((tri_h*tri_l)/2)*0.0001)
+    aire = round(float(((tri_h*tri_l)/2)*0.0001), 2)
     print(f"Aire du triangle: {aire} m2")
     return aire
 
 def cercle_aire():
-    aire = float((pi * cc_r**2)*0.0001)
+    aire = round(float((pi * cc_r**2)*0.0001), 2)
     print(f"Aire du cercle: {aire} m2")
     return aire
 
 def rendement():
     if forme == "c":
-        vol_peint = float(carre_aire()/rdm)
+        vol_peint = round(float(carre_aire()/rdm), 2)
         print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
     if forme == "r":
-        vol_peint = float(rectangle_aire()/rdm)
+        vol_peint = round(float(rectangle_aire()/rdm), 2)
         print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
     if forme == "t":
-        vol_peint = float(triangle_aire()/rdm)
+        vol_peint = round(float(triangle_aire()/rdm), 2)
         print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
     if forme == "cc":
-        vol_peint = float(cercle_aire()/rdm)
+        vol_peint = round(float(cercle_aire()/rdm), 2)
         print(f"Il vous faudra {vol_peint} litres de peinture pour {aire} m2")
 
 
